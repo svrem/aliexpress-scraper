@@ -3,7 +3,7 @@ name = "aliexpress-scraper"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "A aliexpress scraper using requests."
+description = "An aliexpress scraper using requests."
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
