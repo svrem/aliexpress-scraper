@@ -1,4 +1,3 @@
-use async_recursion::async_recursion;
 mod structs;
 
 /// Fetches product details from aliexpress.
@@ -56,7 +55,6 @@ fn filter_run_params(page: String) -> Result<String, ()> {
     return Ok(res.to_owned());
 }
 
-#[async_recursion]
 async fn get_aliexpress_html(product_id: &str) -> Result<String, &str> {
     let res_result =
         reqwest::get(format!("https://www.aliexpress.com/item/{product_id}.html")).await;
