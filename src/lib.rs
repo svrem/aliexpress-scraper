@@ -53,7 +53,7 @@ fn filter_run_params(page: String) -> Result<String, ()> {
 
 async fn get_aliexpress_html(product_id: &str) -> Result<String, &str> {
     let res_result =
-        reqwest::get(format!("https://www.aliexpress.us/item/{product_id}.html")).await;
+        reqwest::get(format!("https://www.aliexpress.com/item/{product_id}.html")).await;
 
     if let Err(_) = res_result {
         return Err("Failed to fetch product page");

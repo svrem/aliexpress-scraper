@@ -4,7 +4,6 @@ use serde_json::Value;
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-
 pub struct Product {
     pub action_module: ActionModule,
     pub ae_plus_module: AePlusModule,
@@ -91,72 +90,72 @@ pub struct Features {}
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct I18nMap {
-    #[serde(rename = "ADDED_TO")]
-    pub added_to: String,
-    #[serde(rename = "ADD_TO_CART")]
-    pub add_to_cart: String,
-    #[serde(rename = "ADD_X_MORE")]
-    pub add_x_more: String,
-    #[serde(rename = "BUYER_ABLE")]
-    pub buyer_able: String,
-    #[serde(rename = "BUY_NOW")]
-    pub buy_now: String,
-    #[serde(rename = "COMING_SOON")]
-    pub coming_soon: String,
-    #[serde(rename = "CONTINUE")]
-    pub continue_field: String,
-    #[serde(rename = "FIND_SIMILAR")]
-    pub find_similar: String,
-    #[serde(rename = "NO_LONGER_AVAILABLE")]
-    pub no_longer_available: String,
-    #[serde(rename = "ORDER_NOW")]
-    pub order_now: String,
-    #[serde(rename = "PREVIEW_PERIOD")]
-    pub preview_period: String,
-    #[serde(rename = "SC_ADD_FAILED")]
-    pub sc_add_failed: String,
-    #[serde(rename = "SC_ADD_MAX")]
-    pub sc_add_max: String,
-    #[serde(rename = "SC_ADD_SUCC")]
-    pub sc_add_succ: String,
-    #[serde(rename = "SC_HAVE")]
-    pub sc_have: String,
-    #[serde(rename = "SC_RECOMMEND")]
-    pub sc_recommend: String,
-    #[serde(rename = "SC_VIEW")]
-    pub sc_view: String,
-    #[serde(rename = "SELECT_TIP")]
-    pub select_tip: String,
-    #[serde(rename = "WISHLIST_PUBLIC_NOTICE")]
-    pub wishlist_public_notice: String,
-    #[serde(rename = "WISHLIST_PUBLIC_TIP")]
-    pub wishlist_public_tip: String,
-    #[serde(rename = "WISHLIST_SAVE_BUTTON")]
-    pub wishlist_save_button: String,
-    #[serde(rename = "WISH_CANCEL_WISHLIST")]
-    pub wish_cancel_wishlist: String,
-    #[serde(rename = "WISH_CREATE_LIST")]
-    pub wish_create_list: String,
-    #[serde(rename = "WISH_DETAULT_LIST")]
-    pub wish_detault_list: String,
-    #[serde(rename = "WISH_MAX_GROUP")]
-    pub wish_max_group: String,
     #[serde(rename = "WISH_MAX_NOTICE")]
     pub wish_max_notice: String,
+    #[serde(rename = "BUYER_ABLE")]
+    pub buyer_able: String,
+    #[serde(rename = "WISHLIST_SAVE_BUTTON")]
+    pub wishlist_save_button: String,
     #[serde(rename = "WISH_MOVE_TO_ANOTHER_LIST_TIPS")]
     pub wish_move_to_another_list_tips: String,
+    #[serde(rename = "ADD_X_MORE")]
+    pub add_x_more: String,
+    #[serde(rename = "COMING_SOON")]
+    pub coming_soon: String,
+    #[serde(rename = "SC_ADD_SUCC")]
+    pub sc_add_succ: String,
+    #[serde(rename = "WISHLIST_PUBLIC_NOTICE")]
+    pub wishlist_public_notice: String,
+    #[serde(rename = "WISH_DETAULT_LIST")]
+    pub wish_detault_list: String,
+    #[serde(rename = "WISH_CREATE_LIST")]
+    pub wish_create_list: String,
+    #[serde(rename = "WL_ERROR")]
+    pub wl_error: String,
     #[serde(rename = "WISH_NAME_ALREADY_USE")]
     pub wish_name_already_use: String,
     #[serde(rename = "WISH_REVISELIST")]
     pub wish_reviselist: String,
+    #[serde(rename = "SC_ADD_FAILED")]
+    pub sc_add_failed: String,
+    #[serde(rename = "SC_HAVE")]
+    pub sc_have: String,
+    #[serde(rename = "ADD_TO_CART")]
+    pub add_to_cart: String,
+    #[serde(rename = "WISH_CANCEL_WISHLIST")]
+    pub wish_cancel_wishlist: String,
+    #[serde(rename = "BUY_NOW")]
+    pub buy_now: String,
     #[serde(rename = "WISH_SYSTEM_ERROR")]
     pub wish_system_error: String,
-    #[serde(rename = "WISH_VIEW_WISH_LIST")]
-    pub wish_view_wish_list: String,
+    #[serde(rename = "SC_ADD_MAX")]
+    pub sc_add_max: String,
+    #[serde(rename = "SC_VIEW")]
+    pub sc_view: String,
     #[serde(rename = "WISH_YOUMAYLIKE")]
     pub wish_youmaylike: String,
-    #[serde(rename = "WL_ERROR")]
-    pub wl_error: String,
+    #[serde(rename = "WISH_VIEW_WISH_LIST")]
+    pub wish_view_wish_list: String,
+    #[serde(rename = "SC_RECOMMEND")]
+    pub sc_recommend: String,
+    #[serde(rename = "CONTINUE")]
+    pub continue_field: String,
+    #[serde(rename = "ADDED_TO")]
+    pub added_to: String,
+    #[serde(rename = "ORDER_NOW")]
+    pub order_now: String,
+    #[serde(rename = "SELECT_TIP")]
+    pub select_tip: String,
+    #[serde(rename = "NO_LONGER_AVAILABLE")]
+    pub no_longer_available: String,
+    #[serde(rename = "PREVIEW_PERIOD")]
+    pub preview_period: String,
+    #[serde(rename = "WISH_MAX_GROUP")]
+    pub wish_max_group: String,
+    #[serde(rename = "FIND_SIMILAR")]
+    pub find_similar: String,
+    #[serde(rename = "WISHLIST_PUBLIC_TIP")]
+    pub wishlist_public_tip: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -192,7 +191,7 @@ pub struct BuyerProtectionModule {
     pub i18n_map: I18nMap3,
     pub id: i64,
     pub name: String,
-    pub return_policy_guarantees: ReturnPolicyGuarantees,
+    pub return_policy_guarantees: Option<ReturnPolicyGuarantees>,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -214,12 +213,12 @@ pub struct Features3 {}
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct I18nMap3 {
-    #[serde(rename = "PLAZA_BUYER_PROTECTION_CONTENT")]
-    pub plaza_buyer_protection_content: String,
-    #[serde(rename = "PLAZA_BUYER_PROTECTION_TIP")]
-    pub plaza_buyer_protection_tip: String,
     #[serde(rename = "PLAZA_BUYER_PROTECTION_TITLE")]
     pub plaza_buyer_protection_title: String,
+    #[serde(rename = "PLAZA_BUYER_PROTECTION_TIP")]
+    pub plaza_buyer_protection_tip: String,
+    #[serde(rename = "PLAZA_BUYER_PROTECTION_CONTENT")]
+    pub plaza_buyer_protection_content: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -296,97 +295,97 @@ pub struct Features5 {}
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct I18nMap5 {
-    #[serde(rename = "ADDED")]
-    pub added: String,
-    #[serde(rename = "BUY_GET_OFF")]
-    pub buy_get_off: String,
-    #[serde(rename = "CROSS_STORE_VOUCHER")]
-    pub cross_store_voucher: String,
-    #[serde(rename = "CROSS_STORE_VOUCHER_TIP")]
-    pub cross_store_voucher_tip: String,
-    #[serde(rename = "EXCHANGE_MORE")]
-    pub exchange_more: String,
-    #[serde(rename = "EXCHANGE_NOW")]
-    pub exchange_now: String,
-    #[serde(rename = "GET")]
-    pub get: String,
     #[serde(rename = "GET_COUPONS")]
     pub get_coupons: String,
-    #[serde(rename = "GET_IT")]
-    pub get_it: String,
-    #[serde(rename = "GET_MORE")]
-    pub get_more: String,
-    #[serde(rename = "GET_NOW")]
-    pub get_now: String,
-    #[serde(rename = "INSTANT_DISCOUNT")]
-    pub instant_discount: String,
-    #[serde(rename = "MY_BALANCE")]
-    pub my_balance: String,
-    #[serde(rename = "MY_COINS")]
-    pub my_coins: String,
-    #[serde(rename = "NEW_USER_COUPON")]
-    pub new_user_coupon: String,
-    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL")]
-    pub new_user_coupon_acquire_fail: String,
-    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_ALREADY_HAVE")]
-    pub new_user_coupon_acquire_fail_already_have: String,
-    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_GRANT_ERROR")]
-    pub new_user_coupon_acquire_fail_grant_error: String,
-    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_GROUP_LIMIT")]
-    pub new_user_coupon_acquire_fail_group_limit: String,
-    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_LIMIT_DAY")]
-    pub new_user_coupon_acquire_fail_limit_day: String,
-    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_LIMIT_HOUR")]
-    pub new_user_coupon_acquire_fail_limit_hour: String,
-    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_NOT_AVAILABLE_NOW")]
-    pub new_user_coupon_acquire_fail_not_available_now: String,
-    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_NOT_NEW_USER")]
-    pub new_user_coupon_acquire_fail_not_new_user: String,
-    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_REGISTER_COUNTRY_LIMIT")]
-    pub new_user_coupon_acquire_fail_register_country_limit: String,
-    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_SECURITY")]
-    pub new_user_coupon_acquire_fail_security: String,
-    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_SYSTEM_ERROR")]
-    pub new_user_coupon_acquire_fail_system_error: String,
-    #[serde(rename = "OFF_ON")]
-    pub off_on: String,
-    #[serde(rename = "OFF_PER")]
-    pub off_per: String,
-    #[serde(rename = "ORDER_OVER")]
-    pub order_over: String,
-    #[serde(rename = "PANEL_TITLE")]
-    pub panel_title: String,
     #[serde(rename = "SCP_ERR_HAVE")]
     pub scp_err_have: String,
-    #[serde(rename = "SCP_ERR_NONE")]
-    pub scp_err_none: String,
-    #[serde(rename = "SHOPPONG_CREDIT")]
-    pub shoppong_credit: String,
-    #[serde(rename = "SHOP_COUPONE_TIME_EXPIRES")]
-    pub shop_coupone_time_expires: String,
-    #[serde(rename = "SHOP_COUPONE_TIME_START_END")]
-    pub shop_coupone_time_start_end: String,
-    #[serde(rename = "SHOP_PROMO_CODE_COPIED")]
-    pub shop_promo_code_copied: String,
-    #[serde(rename = "SHOP_PROMO_CODE_COP_FAILED")]
-    pub shop_promo_code_cop_failed: String,
-    #[serde(rename = "SHOP_PROMO_CODE_TITLE")]
-    pub shop_promo_code_title: String,
-    #[serde(rename = "STORE_COUPON")]
-    pub store_coupon: String,
-    #[serde(rename = "code-30005Title")]
-    pub code_30005title: String,
-    #[serde(rename = "code14Title")]
-    pub code14title: String,
-    #[serde(rename = "code17Title")]
-    pub code17title: String,
-    #[serde(rename = "code50Title")]
-    pub code50title: String,
-    #[serde(rename = "code51Title")]
-    pub code51title: String,
+    #[serde(rename = "OFF_ON")]
+    pub off_on: String,
+    #[serde(rename = "ORDER_OVER")]
+    pub order_over: String,
     #[serde(rename = "code52Title")]
     pub code52title: String,
+    #[serde(rename = "GET_IT")]
+    pub get_it: String,
+    #[serde(rename = "GET_NOW")]
+    pub get_now: String,
+    #[serde(rename = "GET_MORE")]
+    pub get_more: String,
     pub system_error: String,
+    #[serde(rename = "OFF_PER")]
+    pub off_per: String,
+    #[serde(rename = "STORE_COUPON")]
+    pub store_coupon: String,
+    #[serde(rename = "SHOP_COUPONE_TIME_START_END")]
+    pub shop_coupone_time_start_end: String,
+    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_ALREADY_HAVE")]
+    pub new_user_coupon_acquire_fail_already_have: String,
+    #[serde(rename = "code50Title")]
+    pub code50title: String,
+    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_NOT_AVAILABLE_NOW")]
+    pub new_user_coupon_acquire_fail_not_available_now: String,
+    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_GROUP_LIMIT")]
+    pub new_user_coupon_acquire_fail_group_limit: String,
+    #[serde(rename = "code14Title")]
+    pub code14title: String,
+    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_NOT_NEW_USER")]
+    pub new_user_coupon_acquire_fail_not_new_user: String,
+    #[serde(rename = "SHOP_PROMO_CODE_COPIED")]
+    pub shop_promo_code_copied: String,
+    #[serde(rename = "ADDED")]
+    pub added: String,
+    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_SECURITY")]
+    pub new_user_coupon_acquire_fail_security: String,
+    #[serde(rename = "SHOP_PROMO_CODE_TITLE")]
+    pub shop_promo_code_title: String,
+    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL")]
+    pub new_user_coupon_acquire_fail: String,
+    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_LIMIT_DAY")]
+    pub new_user_coupon_acquire_fail_limit_day: String,
+    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_REGISTER_COUNTRY_LIMIT")]
+    pub new_user_coupon_acquire_fail_register_country_limit: String,
+    #[serde(rename = "SCP_ERR_NONE")]
+    pub scp_err_none: String,
+    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_GRANT_ERROR")]
+    pub new_user_coupon_acquire_fail_grant_error: String,
+    #[serde(rename = "code17Title")]
+    pub code17title: String,
+    #[serde(rename = "SHOP_COUPONE_TIME_EXPIRES")]
+    pub shop_coupone_time_expires: String,
+    #[serde(rename = "SHOPPONG_CREDIT")]
+    pub shoppong_credit: String,
+    #[serde(rename = "EXCHANGE_MORE")]
+    pub exchange_more: String,
+    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_SYSTEM_ERROR")]
+    pub new_user_coupon_acquire_fail_system_error: String,
+    #[serde(rename = "MY_BALANCE")]
+    pub my_balance: String,
+    #[serde(rename = "INSTANT_DISCOUNT")]
+    pub instant_discount: String,
+    #[serde(rename = "EXCHANGE_NOW")]
+    pub exchange_now: String,
+    #[serde(rename = "CROSS_STORE_VOUCHER_TIP")]
+    pub cross_store_voucher_tip: String,
+    #[serde(rename = "NEW_USER_COUPON")]
+    pub new_user_coupon: String,
+    #[serde(rename = "GET")]
+    pub get: String,
+    #[serde(rename = "SHOP_PROMO_CODE_COP_FAILED")]
+    pub shop_promo_code_cop_failed: String,
+    #[serde(rename = "code-30005Title")]
+    pub code_30005title: String,
+    #[serde(rename = "MY_COINS")]
+    pub my_coins: String,
+    #[serde(rename = "BUY_GET_OFF")]
+    pub buy_get_off: String,
+    #[serde(rename = "code51Title")]
+    pub code51title: String,
+    #[serde(rename = "PANEL_TITLE")]
+    pub panel_title: String,
+    #[serde(rename = "NEW_USER_COUPON_ACQUIRE_FAIL_LIMIT_HOUR")]
+    pub new_user_coupon_acquire_fail_limit_hour: String,
+    #[serde(rename = "CROSS_STORE_VOUCHER")]
+    pub cross_store_voucher: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -452,9 +451,9 @@ pub struct PromotionPanelDetailDtolist {
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Attributes {
-    pub activity_id: String,
-    pub code_scope: String,
+    pub activity_id: Option<String>,
     pub collected_tips: String,
+    pub code_scope: String,
     pub coupon_campaign_style: String,
     pub coupon_code: String,
 }
@@ -514,10 +513,10 @@ pub struct Features6 {}
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct I18nMap6 {
-    #[serde(rename = "BREADCRUMB_PART1")]
-    pub breadcrumb_part1: String,
     #[serde(rename = "BREADCRUMB_PART2")]
     pub breadcrumb_part2: String,
+    #[serde(rename = "BREADCRUMB_PART1")]
+    pub breadcrumb_part1: String,
     #[serde(rename = "CROSSLINK_RELATED_SEARCHES")]
     pub crosslink_related_searches: String,
 }
@@ -588,17 +587,17 @@ pub struct I18nMap9 {}
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct I18nMap10 {
+    #[serde(rename = "VIEW_MORE")]
+    pub view_more: String,
     #[serde(rename = "ASK_BUYERS")]
     pub ask_buyers: String,
     #[serde(rename = "PAGE_NOT_FOUND_NOTICE")]
     pub page_not_found_notice: String,
-    #[serde(rename = "PAGE_NOT_FOUND_RCMD_TITLE")]
-    pub page_not_found_rcmd_title: String,
     #[serde(rename = "VIEW_5_MORE_ANSWERS")]
     pub view_5_more_answers: String,
-    #[serde(rename = "VIEW_MORE")]
-    pub view_more: String,
     pub open_trace: String,
+    #[serde(rename = "PAGE_NOT_FOUND_RCMD_TITLE")]
+    pub page_not_found_rcmd_title: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -657,12 +656,12 @@ pub struct Features13 {}
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct I18nMap13 {
-    #[serde(rename = "DAY")]
-    pub day: String,
-    #[serde(rename = "DAYS")]
-    pub days: String,
     #[serde(rename = "END_IN")]
     pub end_in: String,
+    #[serde(rename = "DAYS")]
+    pub days: String,
+    #[serde(rename = "DAY")]
+    pub day: String,
     #[serde(rename = "STARTS_IN")]
     pub starts_in: String,
 }
@@ -684,48 +683,48 @@ pub struct Features14 {}
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct I18nMap14 {
-    #[serde(rename = "PLAZA_SERVICE_CONTENT1_PC")]
-    pub plaza_service_content1_pc: String,
-    #[serde(rename = "PLAZA_SERVICE_CONTENT2_PC")]
-    pub plaza_service_content2_pc: String,
-    #[serde(rename = "PLAZA_SERVICE_CONTENT3_1_PC")]
-    pub plaza_service_content3_1_pc: String,
-    #[serde(rename = "PLAZA_SERVICE_CONTENT3_2_PC")]
-    pub plaza_service_content3_2_pc: String,
-    #[serde(rename = "PLAZA_SERVICE_CONTENT3_3_PC")]
-    pub plaza_service_content3_3_pc: String,
-    #[serde(rename = "PLAZA_SERVICE_SUBTITLE2_PC")]
-    pub plaza_service_subtitle2_pc: String,
-    #[serde(rename = "PLAZA_SERVICE_SUBTITLE3_PC")]
-    pub plaza_service_subtitle3_pc: String,
+    #[serde(rename = "TAB_SPECS")]
+    pub tab_specs: String,
     #[serde(rename = "PLAZA_SERVICE_SUBTITLE_PC")]
     pub plaza_service_subtitle_pc: String,
-    #[serde(rename = "PLAZA_SERVICE_TITLE_PC")]
-    pub plaza_service_title_pc: String,
+    #[serde(rename = "PLAZA_SERVICE_WARRANTY_EMAIL")]
+    pub plaza_service_warranty_email: String,
+    #[serde(rename = "PLAZA_SERVICE_WARRANTY_PHONE")]
+    pub plaza_service_warranty_phone: String,
+    #[serde(rename = "PLAZA_SERVICE_WARRANTY_HOURS")]
+    pub plaza_service_warranty_hours: String,
+    #[serde(rename = "TAB_CUSTOMER_REVIEWS")]
+    pub tab_customer_reviews: String,
+    #[serde(rename = "PLAZA_SERVICE_WARRANTY_WEBSITE")]
+    pub plaza_service_warranty_website: String,
+    #[serde(rename = "TAB_OVERVIEW")]
+    pub tab_overview: String,
     #[serde(rename = "PLAZA_SERVICE_WARRANTY_BRAND")]
     pub plaza_service_warranty_brand: String,
     #[serde(rename = "PLAZA_SERVICE_WARRANTY_CATEGORY")]
     pub plaza_service_warranty_category: String,
-    #[serde(rename = "PLAZA_SERVICE_WARRANTY_EMAIL")]
-    pub plaza_service_warranty_email: String,
-    #[serde(rename = "PLAZA_SERVICE_WARRANTY_HOURS")]
-    pub plaza_service_warranty_hours: String,
-    #[serde(rename = "PLAZA_SERVICE_WARRANTY_PHONE")]
-    pub plaza_service_warranty_phone: String,
+    #[serde(rename = "PLAZA_SERVICE_TITLE_PC")]
+    pub plaza_service_title_pc: String,
+    #[serde(rename = "PLAZA_SERVICE_CONTENT3_3_PC")]
+    pub plaza_service_content3_3_pc: String,
     #[serde(rename = "PLAZA_SERVICE_WARRANTY_TITLE")]
     pub plaza_service_warranty_title: String,
-    #[serde(rename = "PLAZA_SERVICE_WARRANTY_WEBSITE")]
-    pub plaza_service_warranty_website: String,
-    #[serde(rename = "TAB_CUSTOMER_REVIEWS")]
-    pub tab_customer_reviews: String,
-    #[serde(rename = "TAB_OVERVIEW")]
-    pub tab_overview: String,
     #[serde(rename = "TAB_REPORT_ITEM")]
     pub tab_report_item: String,
     #[serde(rename = "TAB_SERVICE")]
     pub tab_service: String,
-    #[serde(rename = "TAB_SPECS")]
-    pub tab_specs: String,
+    #[serde(rename = "PLAZA_SERVICE_CONTENT3_1_PC")]
+    pub plaza_service_content3_1_pc: String,
+    #[serde(rename = "PLAZA_SERVICE_CONTENT3_2_PC")]
+    pub plaza_service_content3_2_pc: String,
+    #[serde(rename = "PLAZA_SERVICE_CONTENT1_PC")]
+    pub plaza_service_content1_pc: String,
+    #[serde(rename = "PLAZA_SERVICE_SUBTITLE2_PC")]
+    pub plaza_service_subtitle2_pc: String,
+    #[serde(rename = "PLAZA_SERVICE_CONTENT2_PC")]
+    pub plaza_service_content2_pc: String,
+    #[serde(rename = "PLAZA_SERVICE_SUBTITLE3_PC")]
+    pub plaza_service_subtitle3_pc: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -858,12 +857,12 @@ pub struct Features17 {}
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct I18nMap17 {
-    #[serde(rename = "DEPOSIT")]
-    pub deposit: String,
-    #[serde(rename = "INSTALLMENT")]
-    pub installment: String,
     #[serde(rename = "LOT")]
     pub lot: String,
+    #[serde(rename = "INSTALLMENT")]
+    pub installment: String,
+    #[serde(rename = "DEPOSIT")]
+    pub deposit: String,
     #[serde(rename = "PRE_ORDER_PRICE")]
     pub pre_order_price: String,
 }
@@ -903,8 +902,8 @@ pub struct MinAmount {
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct PriceRuleInfo {
-    pub hint_copywriting: String,
-    pub layer_info: LayerInfo,
+    pub hint_copywriting: Option<String>,
+    pub layer_info: Option<LayerInfo>,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -940,20 +939,20 @@ pub struct Features18 {}
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct I18nMap18 {
-    #[serde(rename = "ADDTIONAL")]
-    pub addtional: String,
-    #[serde(rename = "BUY_LIMIT")]
-    pub buy_limit: String,
     #[serde(rename = "LOT")]
     pub lot: String,
     #[serde(rename = "LOTS")]
     pub lots: String,
+    #[serde(rename = "BUY_LIMIT")]
+    pub buy_limit: String,
+    #[serde(rename = "QUANTITY")]
+    pub quantity: String,
     #[serde(rename = "OFF_OR_MORE")]
     pub off_or_more: String,
     #[serde(rename = "ONLY_QUANTITY_LEFT")]
     pub only_quantity_left: String,
-    #[serde(rename = "QUANTITY")]
-    pub quantity: String,
+    #[serde(rename = "ADDTIONAL")]
+    pub addtional: String,
     #[serde(rename = "QUANTITY_AVAILABLE")]
     pub quantity_available: String,
 }
@@ -976,26 +975,26 @@ pub struct RecommendModule {
 #[serde(rename_all = "camelCase")]
 pub struct Features19 {
     pub recommend_gps_scenario_other_seller_products: String,
-    pub recommend_gps_scenario_seller_other_products: String,
-    pub recommend_gps_scenario_top_selling: String,
     pub show_sub_title: String,
+    pub recommend_gps_scenario_top_selling: String,
+    pub recommend_gps_scenario_seller_other_products: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct I18nMap19 {
-    #[serde(rename = "FROM_OTHER_SELLER")]
-    pub from_other_seller: String,
     #[serde(rename = "MORE_FROM_THIS_SELLER")]
     pub more_from_this_seller: String,
-    #[serde(rename = "PRODUCT_SOLD")]
-    pub product_sold: String,
-    #[serde(rename = "TOP_SELLING")]
-    pub top_selling: String,
-    #[serde(rename = "VIEW_MORE_LINK")]
-    pub view_more_link: String,
     #[serde(rename = "YOU_MAY_LIKE")]
     pub you_may_like: String,
+    #[serde(rename = "TOP_SELLING")]
+    pub top_selling: String,
+    #[serde(rename = "FROM_OTHER_SELLER")]
+    pub from_other_seller: String,
+    #[serde(rename = "VIEW_MORE_LINK")]
+    pub view_more_link: String,
+    #[serde(rename = "PRODUCT_SOLD")]
+    pub product_sold: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -1091,39 +1090,39 @@ pub struct AdditionLayout {
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct BizData {
-    pub company: String,
-    pub currency: String,
-    pub delivery_date: String,
-    pub delivery_day_max: i64,
-    pub delivery_day_min: i64,
     pub delivery_option_code: String,
-    pub delivery_provider_code: String,
     pub delivery_provider_name: String,
-    pub discount: f64,
-    pub eta_trace_id: String,
-    pub freight_commit_day: String,
-    pub guaranteed_delivery_time: i64,
-    pub guaranteed_delivery_time_provider_name: String,
-    pub item_id: i64,
-    pub item_scene: String,
-    pub item_ship_from_type: String,
     pub lead_time_sort: Vec<i64>,
     pub pattern_id: i64,
+    pub discount: f64,
+    pub ut_params: String,
+    pub tracking: String,
     pub provider: String,
-    pub ship_from: String,
-    pub ship_from_code: String,
-    pub ship_to: String,
+    pub item_ship_from_type: String,
+    pub item_scene: String,
     pub ship_to_code: String,
+    pub company: String,
+    pub currency: String,
+    pub delivery_date: Option<String>,
+    pub ship_from: String,
+    pub delivery_day_max: i64,
+    pub guaranteed_delivery_time: i64,
+    pub freight_commit_day: String,
+    pub eta_trace_id: Option<String>,
+    pub item_id: i64,
+    pub solution_business_type: String,
     pub shipping_fee: String,
+    pub delivery_day_min: i64,
+    pub guaranteed_delivery_time_provider_name: String,
     #[serde(rename = "showXDayDeliveryTips")]
     pub show_xday_delivery_tips: String,
-    pub solution_business_type: String,
     pub solution_id: i64,
-    pub tracking: String,
-    pub ut_params: String,
+    pub ship_from_code: String,
+    pub delivery_provider_code: String,
+    pub ship_to: String,
+    pub formatted_amount: Option<String>,
     pub display_amount: Option<f64>,
     pub display_currency: Option<String>,
-    pub formatted_amount: Option<String>,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -1169,104 +1168,104 @@ pub struct TitleLayout {
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct I18nMap21 {
-    #[serde(rename = "APPLY")]
-    pub apply: String,
-    #[serde(rename = "BALLOON_TIP")]
-    pub balloon_tip: String,
-    #[serde(rename = "CAN_NOE_DELIVER_NOTE")]
-    pub can_noe_deliver_note: String,
-    #[serde(rename = "CAN_NOT_DELIVER")]
-    pub can_not_deliver: String,
-    #[serde(rename = "CARRIER")]
-    pub carrier: String,
-    #[serde(rename = "CHOOSE_DELIVERT_METHOD")]
-    pub choose_delivert_method: String,
-    #[serde(rename = "COST")]
-    pub cost: String,
-    #[serde(rename = "DAYS")]
-    pub days: String,
-    #[serde(rename = "DELIVERED_BY")]
-    pub delivered_by: String,
-    #[serde(rename = "ESTIMATED_DELIVERT_ON_DATE")]
-    pub estimated_delivert_on_date: String,
-    #[serde(rename = "ESTIMATED_DELIVERT_ON_DAYS")]
-    pub estimated_delivert_on_days: String,
-    #[serde(rename = "ESTIMATED_DELIVERY")]
-    pub estimated_delivery: String,
-    #[serde(rename = "FAST_SHIPPING")]
-    pub fast_shipping: String,
-    #[serde(rename = "FREE_SHIPPING")]
-    pub free_shipping: String,
-    #[serde(rename = "GENERAL_SHIPPIING_FROM")]
-    pub general_shippiing_from: String,
-    #[serde(rename = "GENERAL_SHIPPING_DELIVERY")]
-    pub general_shipping_delivery: String,
-    #[serde(rename = "GENERAL_SHIPPING_TO")]
-    pub general_shipping_to: String,
-    #[serde(rename = "GENERAL_SHPPING_MORE")]
-    pub general_shpping_more: String,
-    #[serde(rename = "HAB_BALLOON_DOOR_DELIVERY")]
-    pub hab_balloon_door_delivery: String,
     #[serde(rename = "HAB_BALLOON_TRAKING_AVAILABLE")]
     pub hab_balloon_traking_available: String,
-    #[serde(rename = "HAB_BALLOON_VAT_INCLUDED")]
-    pub hab_balloon_vat_included: String,
-    #[serde(rename = "HAB_SHIPPING_TO")]
-    pub hab_shipping_to: String,
-    #[serde(rename = "HBA_BALLOON_TIPS")]
-    pub hba_balloon_tips: String,
-    #[serde(rename = "HBA_DOR_DELIVERY")]
-    pub hba_dor_delivery: String,
-    #[serde(rename = "HBA_SHIPPING_INFO")]
-    pub hba_shipping_info: String,
-    #[serde(rename = "HBA_TRAKING_AVAILABLE")]
-    pub hba_traking_available: String,
-    #[serde(rename = "HBA_TVAT_INCLUDED")]
-    pub hba_tvat_included: String,
-    #[serde(rename = "IN")]
-    pub in_field: String,
-    #[serde(rename = "LOGISTIC_COMPOSE_AE")]
-    pub logistic_compose_ae: String,
-    #[serde(rename = "LOGISTIC_COMPOSE_BRAND_MIND")]
-    pub logistic_compose_brand_mind: String,
-    #[serde(rename = "LOGISTIC_COMPOSE_ORDERS_OVER")]
-    pub logistic_compose_orders_over: String,
-    #[serde(rename = "LOGISTIC_COMPOSE_SPEED_UP")]
-    pub logistic_compose_speed_up: String,
-    #[serde(rename = "OR_FULL_REFOUND")]
-    pub or_full_refound: String,
-    #[serde(rename = "PLAZA_BALLOON_TIP")]
-    pub plaza_balloon_tip: String,
-    #[serde(rename = "PLAZA_SHOP_NOW_RECEIVE_ON")]
-    pub plaza_shop_now_receive_on: String,
-    #[serde(rename = "SEARCH")]
-    pub search: String,
-    #[serde(rename = "SELECTED")]
-    pub selected: String,
-    #[serde(rename = "SELECT_SHIP_FROM")]
-    pub select_ship_from: String,
+    #[serde(rename = "GENERAL_SHIPPING_TO")]
+    pub general_shipping_to: String,
     #[serde(rename = "SELECT_SHIP_FROM_TIP")]
     pub select_ship_from_tip: String,
     #[serde(rename = "SHIPPING_TO")]
     pub shipping_to: String,
-    #[serde(rename = "SHIP_MY_ITEM_TO")]
-    pub ship_my_item_to: String,
-    #[serde(rename = "TO_CITY")]
-    pub to_city: String,
-    #[serde(rename = "TO_COUNTRY")]
-    pub to_country: String,
+    #[serde(rename = "HAB_SHIPPING_TO")]
+    pub hab_shipping_to: String,
+    #[serde(rename = "CARRIER")]
+    pub carrier: String,
     #[serde(rename = "TO_PROVINCE")]
     pub to_province: String,
-    #[serde(rename = "TO_VIA")]
-    pub to_via: String,
-    #[serde(rename = "TO_WHERE")]
-    pub to_where: String,
-    #[serde(rename = "TRACKING")]
-    pub tracking: String,
+    #[serde(rename = "TO_COUNTRY")]
+    pub to_country: String,
+    #[serde(rename = "TO_CITY")]
+    pub to_city: String,
+    #[serde(rename = "CAN_NOE_DELIVER_NOTE")]
+    pub can_noe_deliver_note: String,
+    #[serde(rename = "ESTIMATED_DELIVERT_ON_DAYS")]
+    pub estimated_delivert_on_days: String,
+    #[serde(rename = "CHOOSE_DELIVERT_METHOD")]
+    pub choose_delivert_method: String,
+    #[serde(rename = "HAB_BALLOON_DOOR_DELIVERY")]
+    pub hab_balloon_door_delivery: String,
+    #[serde(rename = "DELIVERED_BY")]
+    pub delivered_by: String,
+    #[serde(rename = "HBA_SHIPPING_INFO")]
+    pub hba_shipping_info: String,
+    #[serde(rename = "IN")]
+    pub in_field: String,
+    #[serde(rename = "SEARCH")]
+    pub search: String,
+    #[serde(rename = "SELECT_SHIP_FROM")]
+    pub select_ship_from: String,
+    #[serde(rename = "LOGISTIC_COMPOSE_AE")]
+    pub logistic_compose_ae: String,
+    #[serde(rename = "HBA_BALLOON_TIPS")]
+    pub hba_balloon_tips: String,
+    #[serde(rename = "GENERAL_SHIPPING_DELIVERY")]
+    pub general_shipping_delivery: String,
     #[serde(rename = "VAT_DE_DETAIL")]
     pub vat_de_detail: String,
+    #[serde(rename = "SELECTED")]
+    pub selected: String,
+    #[serde(rename = "HBA_DOR_DELIVERY")]
+    pub hba_dor_delivery: String,
+    #[serde(rename = "ESTIMATED_DELIVERT_ON_DATE")]
+    pub estimated_delivert_on_date: String,
+    #[serde(rename = "OR_FULL_REFOUND")]
+    pub or_full_refound: String,
+    #[serde(rename = "LOGISTIC_COMPOSE_BRAND_MIND")]
+    pub logistic_compose_brand_mind: String,
+    #[serde(rename = "PLAZA_SHOP_NOW_RECEIVE_ON")]
+    pub plaza_shop_now_receive_on: String,
+    #[serde(rename = "LOGISTIC_COMPOSE_ORDERS_OVER")]
+    pub logistic_compose_orders_over: String,
+    #[serde(rename = "FAST_SHIPPING")]
+    pub fast_shipping: String,
+    #[serde(rename = "CAN_NOT_DELIVER")]
+    pub can_not_deliver: String,
+    #[serde(rename = "HBA_TRAKING_AVAILABLE")]
+    pub hba_traking_available: String,
+    #[serde(rename = "DAYS")]
+    pub days: String,
+    #[serde(rename = "GENERAL_SHIPPIING_FROM")]
+    pub general_shippiing_from: String,
+    #[serde(rename = "GENERAL_SHPPING_MORE")]
+    pub general_shpping_more: String,
+    #[serde(rename = "FREE_SHIPPING")]
+    pub free_shipping: String,
+    #[serde(rename = "COST")]
+    pub cost: String,
+    #[serde(rename = "BALLOON_TIP")]
+    pub balloon_tip: String,
+    #[serde(rename = "SHIP_MY_ITEM_TO")]
+    pub ship_my_item_to: String,
+    #[serde(rename = "HAB_BALLOON_VAT_INCLUDED")]
+    pub hab_balloon_vat_included: String,
+    #[serde(rename = "TRACKING")]
+    pub tracking: String,
+    #[serde(rename = "LOGISTIC_COMPOSE_SPEED_UP")]
+    pub logistic_compose_speed_up: String,
+    #[serde(rename = "PLAZA_BALLOON_TIP")]
+    pub plaza_balloon_tip: String,
+    #[serde(rename = "HBA_TVAT_INCLUDED")]
+    pub hba_tvat_included: String,
+    #[serde(rename = "ESTIMATED_DELIVERY")]
+    pub estimated_delivery: String,
+    #[serde(rename = "TO_WHERE")]
+    pub to_where: String,
     #[serde(rename = "VAT_NUMBER")]
     pub vat_number: String,
+    #[serde(rename = "TO_VIA")]
+    pub to_via: String,
+    #[serde(rename = "APPLY")]
+    pub apply: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -1294,86 +1293,86 @@ pub struct Features22 {}
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct I18nMap22 {
-    #[serde(rename = "AXIS")]
-    pub axis: String,
-    #[serde(rename = "BTN_CANCEL")]
-    pub btn_cancel: String,
-    #[serde(rename = "BTN_SAVE")]
-    pub btn_save: String,
-    #[serde(rename = "BUST_CONTENT")]
-    pub bust_content: String,
+    #[serde(rename = "SIZING_INFO")]
+    pub sizing_info: String,
     #[serde(rename = "BUST_PROMPT")]
     pub bust_prompt: String,
-    #[serde(rename = "BUST_TITLE")]
-    pub bust_title: String,
-    #[serde(rename = "CUSTOM_SIZE_CONTENT")]
-    pub custom_size_content: String,
-    #[serde(rename = "CYL")]
-    pub cyl: String,
-    #[serde(rename = "FLOOR_CONTENT")]
-    pub floor_content: String,
-    #[serde(rename = "FLOOR_PROMPT")]
-    pub floor_prompt: String,
-    #[serde(rename = "FLOOR_TITLE")]
-    pub floor_title: String,
     #[serde(rename = "GLASSES_DIALOG_TITLE")]
     pub glasses_dialog_title: String,
-    #[serde(rename = "GLASSES_TIP")]
-    pub glasses_tip: String,
-    #[serde(rename = "HEIGHT_PROMPT")]
-    pub height_prompt: String,
-    #[serde(rename = "HIPS_CONTENT")]
-    pub hips_content: String,
-    #[serde(rename = "HIPS_PROMPT")]
-    pub hips_prompt: String,
-    #[serde(rename = "HIPS_TITLE")]
-    pub hips_title: String,
-    #[serde(rename = "HOW_TO_MEASURE")]
-    pub how_to_measure: String,
-    #[serde(rename = "ITEM_CONDITION_TIP")]
-    pub item_condition_tip: String,
     #[serde(rename = "NV_ADD")]
     pub nv_add: String,
+    #[serde(rename = "SPH")]
+    pub sph: String,
+    #[serde(rename = "PUPILLARY_PROMPT")]
+    pub pupillary_prompt: String,
+    #[serde(rename = "SIZE_HOVER_TITLE")]
+    pub size_hover_title: String,
+    #[serde(rename = "FLOOR_CONTENT")]
+    pub floor_content: String,
+    #[serde(rename = "CUSTOM_SIZE_CONTENT")]
+    pub custom_size_content: String,
     #[serde(rename = "NV_ADD_PROMPT")]
     pub nv_add_prompt: String,
     #[serde(rename = "PLEASE_ENTER")]
     pub please_enter: String,
-    #[serde(rename = "PUPILLARY_PROMPT")]
-    pub pupillary_prompt: String,
-    #[serde(rename = "SELECT")]
-    pub select: String,
-    #[serde(rename = "SERVICE")]
-    pub service: String,
-    #[serde(rename = "SIZE_CHART")]
-    pub size_chart: String,
-    #[serde(rename = "SIZE_DIALOG_TITLE")]
-    pub size_dialog_title: String,
-    #[serde(rename = "SIZE_HOVER_TITLE")]
-    pub size_hover_title: String,
-    #[serde(rename = "SIZE_INFO")]
-    pub size_info: String,
-    #[serde(rename = "SIZE_INFO_COMPARE_TIP")]
-    pub size_info_compare_tip: String,
-    #[serde(rename = "SIZE_INFO_DESC")]
-    pub size_info_desc: String,
-    #[serde(rename = "SIZE_INFO_TIP")]
-    pub size_info_tip: String,
-    #[serde(rename = "SIZING_INFO")]
-    pub sizing_info: String,
-    #[serde(rename = "SPH")]
-    pub sph: String,
-    #[serde(rename = "SPH_PROMPT")]
-    pub sph_prompt: String,
-    #[serde(rename = "TITLE_OPTIONAL")]
-    pub title_optional: String,
-    #[serde(rename = "UNIT_PROMPT")]
-    pub unit_prompt: String,
-    #[serde(rename = "WAIST_CONTENT")]
-    pub waist_content: String,
-    #[serde(rename = "WAIST_PROMPT")]
-    pub waist_prompt: String,
     #[serde(rename = "WAIST_TITLE")]
     pub waist_title: String,
+    #[serde(rename = "WAIST_CONTENT")]
+    pub waist_content: String,
+    #[serde(rename = "CYL")]
+    pub cyl: String,
+    #[serde(rename = "SERVICE")]
+    pub service: String,
+    #[serde(rename = "BUST_CONTENT")]
+    pub bust_content: String,
+    #[serde(rename = "SIZE_INFO")]
+    pub size_info: String,
+    #[serde(rename = "SIZE_INFO_DESC")]
+    pub size_info_desc: String,
+    #[serde(rename = "ITEM_CONDITION_TIP")]
+    pub item_condition_tip: String,
+    #[serde(rename = "BTN_CANCEL")]
+    pub btn_cancel: String,
+    #[serde(rename = "HOW_TO_MEASURE")]
+    pub how_to_measure: String,
+    #[serde(rename = "SIZE_INFO_TIP")]
+    pub size_info_tip: String,
+    #[serde(rename = "FLOOR_PROMPT")]
+    pub floor_prompt: String,
+    #[serde(rename = "FLOOR_TITLE")]
+    pub floor_title: String,
+    #[serde(rename = "SIZE_INFO_COMPARE_TIP")]
+    pub size_info_compare_tip: String,
+    #[serde(rename = "UNIT_PROMPT")]
+    pub unit_prompt: String,
+    #[serde(rename = "SELECT")]
+    pub select: String,
+    #[serde(rename = "HIPS_TITLE")]
+    pub hips_title: String,
+    #[serde(rename = "HEIGHT_PROMPT")]
+    pub height_prompt: String,
+    #[serde(rename = "WAIST_PROMPT")]
+    pub waist_prompt: String,
+    #[serde(rename = "BTN_SAVE")]
+    pub btn_save: String,
+    #[serde(rename = "TITLE_OPTIONAL")]
+    pub title_optional: String,
+    #[serde(rename = "SIZE_DIALOG_TITLE")]
+    pub size_dialog_title: String,
+    #[serde(rename = "GLASSES_TIP")]
+    pub glasses_tip: String,
+    #[serde(rename = "SIZE_CHART")]
+    pub size_chart: String,
+    #[serde(rename = "HIPS_PROMPT")]
+    pub hips_prompt: String,
+    #[serde(rename = "SPH_PROMPT")]
+    pub sph_prompt: String,
+    #[serde(rename = "HIPS_CONTENT")]
+    pub hips_content: String,
+    #[serde(rename = "BUST_TITLE")]
+    pub bust_title: String,
+    #[serde(rename = "AXIS")]
+    pub axis: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -1514,26 +1513,26 @@ pub struct Features24 {}
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct I18nMap24 {
-    #[serde(rename = "CONTACT_SELLER")]
-    pub contact_seller: String,
     #[serde(rename = "COUSTOMER_SERVICE")]
     pub coustomer_service: String,
-    #[serde(rename = "FOLLOWER")]
-    pub follower: String,
-    #[serde(rename = "FOLLOWERS")]
-    pub followers: String,
-    #[serde(rename = "FOLLOWING_STATE")]
-    pub following_state: String,
-    #[serde(rename = "POSITIVE_FEEDBACK")]
-    pub positive_feedback: String,
-    #[serde(rename = "STORE_CATEGORIES")]
-    pub store_categories: String,
-    #[serde(rename = "TOP_SELLER")]
-    pub top_seller: String,
-    #[serde(rename = "UNFOLLOWING_STATE")]
-    pub unfollowing_state: String,
     #[serde(rename = "VISIT_STORE")]
     pub visit_store: String,
+    #[serde(rename = "CONTACT_SELLER")]
+    pub contact_seller: String,
+    #[serde(rename = "FOLLOWING_STATE")]
+    pub following_state: String,
+    #[serde(rename = "UNFOLLOWING_STATE")]
+    pub unfollowing_state: String,
+    #[serde(rename = "POSITIVE_FEEDBACK")]
+    pub positive_feedback: String,
+    #[serde(rename = "FOLLOWERS")]
+    pub followers: String,
+    #[serde(rename = "FOLLOWER")]
+    pub follower: String,
+    #[serde(rename = "TOP_SELLER")]
+    pub top_seller: String,
+    #[serde(rename = "STORE_CATEGORIES")]
+    pub store_categories: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -1585,20 +1584,20 @@ pub struct FeedbackRating {
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct I18nMap25 {
-    #[serde(rename = "FREEBIE_REVIEW")]
-    pub freebie_review: String,
-    #[serde(rename = "FREEBIE_REVIEWS")]
-    pub freebie_reviews: String,
-    #[serde(rename = "REVIEW")]
-    pub review: String,
     #[serde(rename = "REVIEWS")]
     pub reviews: String,
     #[serde(rename = "VIEW_ALL_REVIEWS")]
     pub view_all_reviews: String,
-    #[serde(rename = "VIEW_EN_TITLE")]
-    pub view_en_title: String,
+    #[serde(rename = "REVIEW")]
+    pub review: String,
     #[serde(rename = "VIEW_OTHER_TITLE")]
     pub view_other_title: String,
+    #[serde(rename = "VIEW_EN_TITLE")]
+    pub view_en_title: String,
+    #[serde(rename = "FREEBIE_REVIEW")]
+    pub freebie_review: String,
+    #[serde(rename = "FREEBIE_REVIEWS")]
+    pub freebie_reviews: String,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -1613,7 +1612,7 @@ pub struct WebEnv {
     pub lang: String,
     pub language: String,
     pub locale: String,
-    pub referer: String,
+    pub referer: Option<String>,
     pub req_host: String,
     pub site: String,
     pub trace_id: String,
@@ -1629,32 +1628,32 @@ pub struct Env {
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ValMap {
-    #[serde(rename = "g11n:country")]
-    pub g11n_country: String,
-    #[serde(rename = "g11n:currency")]
-    pub g11n_currency: String,
     #[serde(rename = "g11n:locale")]
     pub g11n_locale: String,
-    #[serde(rename = "g11n:site")]
-    pub g11n_site: String,
     #[serde(rename = "g11n:timezone")]
     pub g11n_timezone: String,
-    #[serde(rename = "page:app")]
-    pub page_app: String,
-    #[serde(rename = "page:id")]
-    pub page_id: String,
-    #[serde(rename = "page:name")]
-    pub page_name: String,
-    #[serde(rename = "ua:browser")]
-    pub ua_browser: String,
     #[serde(rename = "ua:device")]
     pub ua_device: String,
-    #[serde(rename = "ua:platform")]
-    pub ua_platform: String,
     #[serde(rename = "user:id")]
     pub user_id: String,
-    #[serde(rename = "user:member")]
-    pub user_member: String,
+    #[serde(rename = "g11n:country")]
+    pub g11n_country: String,
+    #[serde(rename = "page:name")]
+    pub page_name: String,
+    #[serde(rename = "g11n:site")]
+    pub g11n_site: String,
+    #[serde(rename = "page:app")]
+    pub page_app: String,
+    #[serde(rename = "ua:browser")]
+    pub ua_browser: String,
+    #[serde(rename = "ua:platform")]
+    pub ua_platform: String,
     #[serde(rename = "user:type")]
     pub user_type: String,
+    #[serde(rename = "page:id")]
+    pub page_id: String,
+    #[serde(rename = "user:member")]
+    pub user_member: String,
+    #[serde(rename = "g11n:currency")]
+    pub g11n_currency: String,
 }
