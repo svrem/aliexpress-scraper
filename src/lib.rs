@@ -1,3 +1,4 @@
+use async_recursion::async_recursion;
 mod structs;
 
 /// Fetches product details from aliexpress.
@@ -18,6 +19,10 @@ pub async fn get_product_details(product_id: &str) -> Result<structs::Product, &
         Ok(params) => params,
         Err(_) => return Err("Failed to parse product page"),
     };
+
+    println!("{}", run_params_string.contains("actionModule"));
+
+    ::std::fs::write("output.json", &run_params_string).unwrap();
 
     let run_params: structs::Product = serde_json::from_str(&run_params_string).unwrap();
 
@@ -51,15 +56,16 @@ fn filter_run_params(page: String) -> Result<String, ()> {
     return Ok(res.to_owned());
 }
 
+#[async_recursion]
 async fn get_aliexpress_html(product_id: &str) -> Result<String, &str> {
     let res_result =
         reqwest::get(format!("https://www.aliexpress.com/item/{product_id}.html")).await;
 
     if let Err(_) = res_result {
-        return Err("Failed to fetch product page");
+        return Err("Request error");
     } else if let Ok(res) = res_result {
         if res.status() != 200 {
-            return Err("Failed to fetch product page");
+            return Err("Status code error");
         }
 
         let text_result = res.text().await;
@@ -69,6 +75,9 @@ async fn get_aliexpress_html(product_id: &str) -> Result<String, &str> {
         } else if let Ok(text) = text_result {
             if text.contains("Sorry, we can't find that page") {
                 return Err("Product page not found");
+            }
+            if text.contains("punish-page") {
+                return Err("You've rate limited by Aliexpress.");
             }
 
             return Ok(text);
